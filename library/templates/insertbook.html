@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block body%}
+<form action="\insertbook\" method="post">
+{%csrf_token%}
+<table>
+	<tr>
+		<td>Book Name:</td>
+		<td><input type="text" name="name"></td><br>
+		<td>Author:</td>
+		<td>
+			<select name="author_id">
+				{% for i in users%}
+				<option value={{i.pk}}>{{i.username}} </option>
+				{%endfor%}
+			</select>
+		</tr></table>
+		<input type="submit" value ="ADD">
+
+</form>
+{%endblock%}

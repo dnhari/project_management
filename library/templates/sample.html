@@ -1,0 +1,33 @@
+{%for l in books%}
+	{{l.name}} has published {{l.author}}
+	<br>
+{%endfor%}
+<br>
+{%if books%}
+	{%for b in books%}
+		{{b.name}}
+	{%endfor%}
+{%else%}
+	No books exists in library
+{%endif%}
+<br><table border="1">
+<th>User Name</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+<th>Age</th>
+<th>Gender</th>
+<th>Address</th>
+{%for i in userDtails%}
+<tr>
+<td>{{i.user__username}}</td>
+<td>{{i.firstName}}</td>
+<td>{{i.lastName}}</td>
+<td>{{i.user__email}}</td>
+
+<td>{{i.age}}</td>
+<td>{{i.gender}}</td>
+<td>{{i.address}}</td>
+</tr>
+{%endfor%}
+</table>
